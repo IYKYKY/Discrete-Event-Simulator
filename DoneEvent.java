@@ -27,7 +27,6 @@ class DoneEvent implements Event {
             double restingTime = s.getRestingTime();
             Server newS = s.updateTime(restingTime);
             servers = servers.set(serverID - 1, newS);
-            System.out.println(servers.get(serverID - 1).getAvailableTime());
             res += String.format("%.3f %d done serving by %d\n", occurTime, 
             customer.getID(), serverID);
             return new Pair<Pair<Event, String>, ImList<Server>>(new
